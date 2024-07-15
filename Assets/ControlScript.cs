@@ -7,32 +7,6 @@ using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.UI;
 
-[System.Serializable]
-public class WorkOut
-{
-    public string ProjectName;
-    public int numberOfWorkoutBalls;
-    public List<WorkoutInfo> workoutInfo;
-}
-
-[System.Serializable]
-public class WorkoutInfo
-{
-    public int workoutID;
-    public string workoutName;
-    public string description;
-    public string ballType;
-    public List<WorkoutDetails> workoutDetails;
-}
-
-[System.Serializable]
-public class WorkoutDetails
-{
-    public int ballId;
-    public float speed;
-    public float ballDirection;
-}
-
 public class ControlScript : MonoBehaviour
 {
     private string fileName = "WorkoutInfoJSONAssignment.json";
@@ -95,6 +69,14 @@ public class ControlScript : MonoBehaviour
                 currentBtn.onClick.AddListener(PopUpWorkOut);
                 continue;
             }
+
+            if (allData.workoutInfo[i].workoutID == 6)
+            {
+                currentBtn.onClick.AddListener(PopUpWorkOut);
+                break;
+            }
+
+
         }
 
         //setup listeners

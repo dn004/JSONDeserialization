@@ -6,9 +6,9 @@ public class ballMove : MonoBehaviour
 {
     public int ballId;
 
-    private Rigidbody rigidBody;
+    public Rigidbody rigidBody;
 
-    private void Start()
+    private void Awake()
     {
         rigidBody = GetComponent<Rigidbody>();
     }

@@ -13,8 +13,8 @@ public class ballMove : MonoBehaviour
         rigidBody = GetComponent<Rigidbody>();
     }
 
-    public void FireBall(float direction, float Speed)
+    public void FireBall(float ballDirection, float Speed)
     {
-        rigidBody.AddForce(new Vector3(direction, 0, 0) * Speed, ForceMode.Impulse);
+        rigidBody.AddForce(new Vector3(ballDirection, 0, 0) * Speed, ForceMode.Impulse);
     }
 }

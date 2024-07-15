@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -31,7 +32,35 @@ public class WorkoutDetails
 
 public class ControlScript : MonoBehaviour
 {
-    private string fileName = "data.json";
+    private string fileName = "WorkoutInfoJSONAssignment.json";
+
+    public GameObject ButtonTemplate;
+    public TextMeshProUGUI ProjectNameText;
+    public WorkOut allData; 
+
+
+
+    public void PopulateArea()
+    {
+        allData = JsonReader();
+        ProjectNameText.text = allData.ProjectName;
+    }
+
+
+
+
+
+
+    private void Start()
+    {
+       PopulateArea();
+    }
+
+
+
+
+
+
 
     public WorkOut JsonReader()
     {
